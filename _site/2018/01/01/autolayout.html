@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en-US">
+
+  <head>
+    <meta charset='utf-8'>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width,maximum-scale=2">
+    <link rel="stylesheet" href="/assets/css/style.css?v=">
+
+<!-- Begin Jekyll SEO tag v2.6.1 -->
+<title>Autolayout 学习笔记 | Tiger in Me</title>
+<meta name="generator" content="Jekyll v3.8.6" />
+<meta property="og:title" content="Autolayout 学习笔记" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="在 Xcode 中设置布局的三种方式：" />
+<meta property="og:description" content="在 Xcode 中设置布局的三种方式：" />
+<link rel="canonical" href="http://localhost:4000/2018/01/01/autolayout.html" />
+<meta property="og:url" content="http://localhost:4000/2018/01/01/autolayout.html" />
+<meta property="og:site_name" content="Tiger in Me" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2018-01-01T00:00:00+08:00" />
+<script type="application/ld+json">
+{"description":"在 Xcode 中设置布局的三种方式：","@type":"BlogPosting","url":"http://localhost:4000/2018/01/01/autolayout.html","headline":"Autolayout 学习笔记","dateModified":"2018-01-01T00:00:00+08:00","datePublished":"2018-01-01T00:00:00+08:00","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/2018/01/01/autolayout.html"},"@context":"https://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+
+  </head>
+
+  <body>
+
+    <!-- HEADER -->
+    <div id="header_wrap" class="outer">
+        <header class="inner">
+
+          <h1 id="project_title">Tiger in Me</h1>
+          <h2 id="project_tagline">In me the tiger sniffs the rose.</h2>
+          <h3 id="navigation_banner"
+          <section>
+            <a href="/">首页 |</a>
+            <a href="/blog">文章列表 |</a>
+            <a href="/about">关于我</a>
+          </section>
+        </h3>
+        </header>
+    </div>
+
+    <!-- MAIN CONTENT -->
+    <div id="main_content_wrap" class="outer">
+      <section id="main_content" class="inner">
+        <h1>Autolayout 学习笔记</h1>
+<p class="meta">01 Jan 2018</p>
+
+<div class="post">
+  <h2 id="在-xcode-中设置布局的三种方式">在 Xcode 中设置布局的三种方式：</h2>
+
+<ol>
+  <li>全部用代码搞定，好处是在多人协作的大型项目中，避免出现 Git 冲突；</li>
+  <li>XIB Files，这是 storyboard 之前的标准，缺点是  single scene，只能往里面添加 UI 元素；</li>
+  <li>storyboard 是当前的标准，可以添加多个 view 和 scene，但是里面的元素都是静态的，无法根据屏幕尺寸的改变自动适应，在这种情况下，Autolayout 出现了。</li>
+</ol>
+
+<h2 id="autolayout-的-4-种方式">Autolayout 的 4 种方式：</h2>
+
+<ol>
+  <li>code swift</li>
+  <li>visual format code</li>
+  <li>在界面构建器（Interface Builder）中添加约束</li>
+  <li>stackview（最佳方式）</li>
+</ol>
+
+<h2 id="3-个视图属性所有视图均具有的属性">3 个视图属性(所有视图均具有的属性)：</h2>
+
+<ol>
+  <li>intrinsic Content Size：intrinsic 的意思是“本质的，固有的”，顾名思义，它指的是一个 view 的固有大小，大小取决于 view 的内容。（我们不会手动改变 view 的 intrinsic Content Size 大小，除非 view 的内容改变导致其改变）</li>
+  <li>Compression Resistance：耐压力，Compression 指压缩，Resistance 指阻力，这个属性表示一个 view 受到压缩时候它本身的耐压性。</li>
+  <li>content hugging：是 Compression Resistance 的反面，当空间多大的时候，保持 View 本身不膨胀。</li>
+</ol>
+
+<h2 id="stackview-的-4-个属性">stackview 的 4 个属性</h2>
+
+<ol>
+  <li>Axis：决定 stackview 是水平排列还是垂直排列</li>
+  <li>Spacing：决定两个 view 之间的空间距离，优先级高于 view 本身的大小，比如空间增大的话，可能会导致 view 的大小缩小，另外，spacing 可以是负值，也就是会让两个 view 重合。</li>
+  <li>Alignment：决定 view 的布局模式，比如左对齐，右对齐，居中，或者顶端对齐、底部对齐或垂直居中。</li>
+  <li>Distribution（最重要的属性）：有两组分配算法
+    <ul>
+      <li>第一组：尽量保持 view 的大小（两种算法）：第一种算法是是 equal spacing——尽量不改变每个 view 的大小，代之以使每个 view 之间的距离保持一致，如果空间不够用，就改变 Compression Resistance 最小 view ，压缩它的大小，如果所有 View 的耐压度相同，就从最左边的 view 开始压缩。第二种算法是 equal centering——跟 equal spacing 差不多，但是它测量 space 是基于 View 的中心而非边缘（在每个 view 的大小不相同的情况下，这个就不太适合了）。</li>
+      <li>第二组：尽量保持 view 之间的 space，更倾向于改变 view 的大小（三种算法）：第一种是 fill（填充） equally——每个 view 占据相同的大小，如果这样做需要改变 view 的大小，它会径直这么做。第二种是 fill proportionally(成比例)——根据 View 的内容调节 view 的大小，同时可以利用 Compression Resistance 和 content hugging 这两个属性来调整某个 View 的大小，所以它是最灵活的一个。第三种是 fill（default）——跟 fill proportionally 类似，但是它会先调整第一个 view 的大小。也就是说，Fill Equally 会保证每一个其所包含的视图都适用同一种规格，而 Fill 则会总是给第一个视图尽可能大的空间</li>
+    </ul>
+  </li>
+</ol>
+
+<h2 id="autolayout-的指导原则">Autolayout 的指导原则</h2>
+
+<ol>
+  <li>除非 stackview 解决不了问题，否则不要用约束来设置布局；</li>
+  <li>从细节开始设置 stackview，然后再往整体扩展，而不是相反；</li>
+  <li>和上一条类似，从内到外设置 UI，而非相反；</li>
+  <li>只相信模拟器的效果，而不是看 Xcode 内的 UI 效果；</li>
+  <li>不要头疼，保持耐心。</li>
+</ol>
+
+<h2 id="autolayout-的七条诫命commandments">Autolayout 的七条诫命（commandments）</h2>
+
+<ol>
+  <li>先挖掘 StackView 的所有属性的潜力来解决问题；</li>
+  <li>如果不行，那就再嵌入一个 StackView；</li>
+  <li>如果还是不行，调节 Compression Resistance 和 content hugging；</li>
+  <li>如果还不行，向 StackView 添加约束；</li>
+  <li>还是不行，那就像 View 添加约束；</li>
+  <li>如果要连接不同的 StackView 中的 view，参考第五条；</li>
+  <li>如果都不行，那就尝试 filler view。</li>
+</ol>
+
+<p>再加一条：如果都不行，尝试 DSL，可以先试试 SnapKit。</p>
+
+</div>
+
+<!-- Post comments -->
+<div class="notecomments">
+    <div id="disqus_thread"></div>
+    <script type="text/javascript">
+        /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+        var disqus_shortname = 'tigerinme'; // required: replace example with your forum shortname
+
+        /* * * DON'T EDIT BELOW THIS LINE * * */
+        (function() {
+            var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+            dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+            (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+        })();
+    </script>
+<!--    <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+    <a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a> -->    
+</div>
+      </section>
+    </div>
+
+    <!-- FOOTER  -->
+    <div id="footer_wrap" class="outer">
+      <footer class="inner">
+        
+        <p>© 2018 tigerin.me | 本网站使用 <a href="https://pages.github.com">GitHub Pages</a> & <a href="https://jekyllrb.com">Jekyll</a> & <a href="https://pages-themes.github.io/slate/">Slate</a> 搭建</p>
+      </footer>
+    </div>
+
+    
+  </body>
+</html>
