@@ -2,11 +2,6 @@
 layout: default
 title: Tiger in Me
 ---
-## [Tigerin.Me](https://tigerin.me)
-
-***Tiger in Me*** means **In me the tiger sniffs the rose.**
-
-心有猛虎，细嗅蔷薇。
 
 关注写作、编程、心智成长。
 
