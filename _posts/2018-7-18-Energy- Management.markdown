@@ -6,7 +6,7 @@ date:   2018-7-18
 
 ## 精力管理的金字塔模型
 
-![](https://tigerin.me/img/pyramid_model.JPG)
+<img src="https://tigerin.me/img/pyramid_model.JPG"  height="520" width="375">
 
 1. 最底层：体能
 
