@@ -6,7 +6,7 @@ date:   2018-7-18
 
 ## 精力管理的金字塔模型
 
-![](../img/pyramid_model.JPG)
+![](https://tigerin.me/img/pyramid_model.JPG)
 
 1. 最底层：体能
 
@@ -170,7 +170,7 @@ date:   2018-7-18
 	- 米字操：头绕着脖子写米字
 	- 小燕飞（见下图）
 
-	![](../img/xiaoyanfei.JPG)
+	![](https://tigerin.me/img/xiaoyanfei.JPG)
 
 ### 代谢相关疾病预防
 
