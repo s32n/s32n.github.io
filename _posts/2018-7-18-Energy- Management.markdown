@@ -102,7 +102,7 @@ date:   2018-7-18
 
 下图为常见食物的 ONQI 表：
 
-![](https://tigerin.me/img/ONQI.JPG)
+<img src="https://tigerin.me/img/ONQI.JPG"  height="1003" width="338">
 
 ## 良好睡眠
 
@@ -169,8 +169,8 @@ date:   2018-7-18
 3. 锻炼背部肌肉
 	- 米字操：头绕着脖子写米字
 	- 小燕飞（见下图）
-
-	![](https://tigerin.me/img/xiaoyanfei.JPG)
+	
+	<img src="https://tigerin.me/img/xiaoyanfei.JPG"  height="750" width="375">
 
 ### 代谢相关疾病预防
 
