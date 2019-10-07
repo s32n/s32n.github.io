@@ -1,6 +1,6 @@
 # Tiger in Me
 
-**in me the tiger sniffe the rose**
+**In me the tiger sniffs the rose**
 
 关注写作、编程、心智成长。
 
