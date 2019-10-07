@@ -102,7 +102,7 @@ date:   2018-7-18
 
 下图为常见食物的 ONQI 表：
 
-![](../img/ONQI.JPG)
+![](https://github.com/s32n/s32n.github.io/blob/master/img/ONQI.JPG)
 
 ## 良好睡眠
 
