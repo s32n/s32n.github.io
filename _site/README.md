@@ -1,9 +1,9 @@
-# Tiger in Me
+# Gene Robot
 
-**In me the tiger sniffs the rose**
+**The Robot's Rebellion**
 
 关注写作、编程、心智成长。
 
-**文章列表：**[https://tigerin.me/blog/](https://tigerin.me/blog/)
+**文章列表：**[https://generobot.me/blog/](https://generobot.me/blog/)
 
-**联系方式：**[https://tigerin.me/about/](https://tigerin.me/about/)
+**联系方式：**[https://generobot.me/about/](https://generobot.me/about/)

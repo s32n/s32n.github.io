@@ -1,10 +1,10 @@
 ---
 layout: default
-title: Tiger in Me
+title: Gene Robot
 ---
 
 关注写作、编程、心智成长。
 
-**文章列表：**[https://tigerin.me/blog/](https://tigerin.me/blog/)
+**文章列表：**[https://generobot.me/blog/](https://generobot.me/blog/)
 
-**联系方式：**[https://tigerin.me/about/](https://tigerin.me/about/)
+**联系方式：**[https://generobot.me/about/](https://generobot.me/about/)
