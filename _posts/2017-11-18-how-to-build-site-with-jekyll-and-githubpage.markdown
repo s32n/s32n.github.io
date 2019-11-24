@@ -73,9 +73,17 @@ date:   2017-11-18
 
 7. 然后就是具体的个性化配置，如何配置模板，可以参考[这里的教程](http://jmcglone.com/guides/github-pages/)。需要注意的是，这个教程是原理参考，具体怎么修改 default.html 等等文件的代码，需要你根据自己的需求来修改，所以需要懂一些 html 知识。
 
+## 给网站添加 favicon 图标
+
+1. 参考 medium 上的这篇文章就可以了[How to add a Favicon to GitHub pages](https://medium.com/@LazaroIbanez/how-to-add-a-favicon-to-github-pages-403935604460)，里面介绍得很详细。需要注意的是，favicon 用 png 格式，不要用 ico 格式。
+
+2. 上面这篇文章里提到的工具网站 https://realfavicongenerator.net 非常好用，不光会给你生成浏览器的图标，还会生成 iPhone App 的图标等等。
+
+
 ## 添加 Disqus 插件
 
 1. 在根目录 _includes 文件夹下新建 disqus.html 文件，复制[这里的代码](https://github.com/jmcglone/jmcglone.github.io/blob/master/_includes/disqus.html)（shortname 根据自己的实际情况修改，需提前注册一个 disqus）
+
 2. 在日志布局文件 post.html 里面添加如下代码[参考链接](https://github.com/jmcglone/jmcglone.github.io/blob/master/_layouts/post.html)：
 	
 	```
@@ -84,6 +92,7 @@ date:   2017-11-18
 		{% include disqus.html %}	 
 	</div>
 	```
+
 3. 在 _config.yml 中启用评论：
 	
 	```
