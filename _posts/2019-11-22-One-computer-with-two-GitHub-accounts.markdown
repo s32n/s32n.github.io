@@ -36,6 +36,7 @@ IdentityFile ~/.ssh/id_rsa_work
 # User 全部设置为 git，一开始我分别设置为 GitHub 上对应的 username，一直无法成功。
 
 ```
+文件名为 config，没有的话就 `touch config` 新建一个。
 
 ## 第四步：更新 Identities
 
