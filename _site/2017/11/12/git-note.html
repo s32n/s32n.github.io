@@ -82,7 +82,7 @@
   <li>善用 .gitignore 和通配符：
     <ul>
       <li>.gitignore 文件路径为 .git/ 下面，内容为需要忽略的文件名。</li>
-      <li>加入需要忽略 /image 目录下的所有 .jpg 格式的文件，可以在 .gitignore 添加一行 image/*.jpg</li>
+      <li>假如需要忽略 /image 目录下的所有 .jpg 格式的文件，可以在 .gitignore 添加一行 image/*.jpg</li>
     </ul>
   </li>
   <li>git tag
@@ -108,7 +108,16 @@
   <li>更改、撤销 commit：
     <ul>
       <li>更改最后一个 commit:</li>
-      <li></li>
+    </ul>
+  </li>
+  <li>将远程仓库的更新合并到本地
+    <ul>
+      <li>
+        <p><code class="highlighter-rouge">git pull origin master:master</code></p>
+      </li>
+      <li>
+        <p><code class="highlighter-rouge">git pull == git fetch + git merge</code></p>
+      </li>
     </ul>
   </li>
 </ol>
