@@ -21,7 +21,7 @@ Git 和 Github 一直在用，但基本只用 clone add commit push 等几个命
 
 5. 善用 .gitignore 和通配符：
 	- .gitignore 文件路径为 .git/ 下面，内容为需要忽略的文件名。
-	- 加入需要忽略 /image 目录下的所有 .jpg 格式的文件，可以在 .gitignore 添加一行 image/*.jpg
+	- 假如需要忽略 /image 目录下的所有 .jpg 格式的文件，可以在 .gitignore 添加一行 image/*.jpg
 
 6. git tag
 	- 向最近的 commit 添加标签： `git tag -a tagname`
@@ -41,4 +41,8 @@ Git 和 Github 一直在用，但基本只用 clone add commit push 等几个命
 9. 合并冲突指示符解释
 10. 更改、撤销 commit：
 	- 更改最后一个 commit:
-	- 
+
+11. 将远程仓库的更新合并到本地
+	- `git pull origin master:master`
+
+	- `git pull == git fetch + git merge`
